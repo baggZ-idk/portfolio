@@ -1,136 +1,450 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <title>baggZ</title>
-      <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet" />
-      <meta property="og:title" content="baggZ">
-      <meta property="og:description" content="baggZ's Portfolio of everything developed by him.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <style>
-         body {
-            font-family: 'Londrina Solid', cursive;
-            text-align: center;
-            padding-top: 10px;
-            background: #1E1E1E;
-            color: #fff;
-         }
+    <title>baggZ</title>
 
-         img {
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            margin: 0.5vw;
-            max-width: 20vw;
-         }
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap"
+      rel="stylesheet"
+    />
 
-         .section {
-            background: #37266b;
-            border-radius: 4vh;
-            margin-left: 20%;
-            margin-right: 20%;
-            padding-bottom: 2vh;
-         }
+    <meta property="og:title" content="baggZ" />
+    <meta
+      property="og:description"
+      content="baggZ's Portfolio of everything developed by him."
+    />
 
-         .Socials-section {
-            background: #37266b;
-            border-radius: 4vh;
-            margin: 20vw;
-            margin-top: 0;
-            margin-bottom: 2vh;
-            padding-bottom: 2vh;
-         }
+    <style>
+      :root {
+        --background: #101418;
+        --surface: #171e25;
+        --surface-hover: #1b252e;
+        --blue: #1683ff;
+        --blue-soft: #1683ff22;
+        --blue-border: #1683ff66;
+        --text: #ffffff;
+        --muted: #9ba9b5;
+      }
 
-         #Socials {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-         }
+      * {
+        box-sizing: border-box;
+      }
 
-         #Socials img {
-            width: 10vw;
-            height: 10vw;
-            margin: 0 0.5vw;
-            transition: transform 0.3s ease;
-            border-radius: 50%;
-            padding: 1vw;
-         }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Londrina Solid", cursive;
+        background: var(--background);
+        color: var(--text);
+      }
 
-         #Socials img:hover {
-            transform: scale(1.1);
-         }
+      .container {
+        width: min(1100px, 90%);
+        margin: auto;
+      }
 
-         h1 {
-            font-size: 7vw;
-            color: #fff;
-         }
+      header {
+        padding: 18vh 0 6vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
 
-         h2 {
-            font-size: 4vw;
-            color: #fff;
-         }
-      </style>
-   </head>
+      header h1 {
+        margin: 0;
+        font-size: clamp(5rem, 14vw, 10rem);
+        line-height: 0.8;
+        color: white;
+        text-shadow: 0 0 30px #1683ff33;
+      }
 
-   <body>
+      header p {
+        margin: 1.5rem 0 0;
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+        color: var(--muted);
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        color: var(--text);
+        text-decoration: none;
+        background: var(--surface);
+        border: 1px solid #ffffff12;
+        border-radius: 12px;
+        padding: 0.8rem 1.4rem;
+        font-size: 1.2rem;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .links a:hover {
+        background: var(--surface-hover);
+        border-color: var(--blue-border);
+        transform: translateY(-3px);
+      }
+
+      section {
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background: var(--surface);
+        border: 1px solid #ffffff0d;
+        border-radius: 24px;
+        transition:
+          background 0.25s ease,
+          border-color 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      section:hover {
+        background: var(--surface-hover);
+        border-color: var(--blue-border);
+        box-shadow: 0 0 30px var(--blue-soft);
+      }
+
+      section h2 {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        font-size: 2.8rem;
+      }
+
+      .models {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .model {
+        background: #101418;
+        border: 1px solid #ffffff0d;
+        border-radius: 16px;
+        padding: 0.75rem;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .model:hover {
+        border-color: var(--blue-border);
+        transform: translateY(-4px);
+        box-shadow: 0 0 20px var(--blue-soft);
+      }
+
+      .model img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border-radius: 10px;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background: #101418;
+        border: 1px solid #ffffff0d;
+        border-radius: 18px;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .socials a:hover {
+        transform: translateY(-5px);
+        border-color: var(--blue-border);
+        box-shadow: 0 0 20px var(--blue-soft);
+      }
+
+      .socials img {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        box-shadow: none;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .project {
+        display: block;
+        padding: 1.5rem;
+        background: #101418;
+        border: 1px solid #ffffff0d;
+        border-radius: 16px;
+        color: var(--text);
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .project:hover {
+        transform: translateY(-4px);
+        background: var(--surface-hover);
+        border-color: var(--blue-border);
+        box-shadow: 0 0 25px var(--blue-soft);
+      }
+
+      .project-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.8rem;
+      }
+
+      .project-arrow {
+        color: var(--blue);
+        font-size: 1.4rem;
+      }
+
+      .project p {
+        color: var(--muted);
+        font-family: sans-serif;
+        line-height: 1.5;
+        margin: 1rem 0;
+      }
+
+      .project-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .project-tags span {
+        padding: 0.3rem 0.7rem;
+        border-radius: 8px;
+        background: var(--blue-soft);
+        color: #69adff;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 700px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .models {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 1.25rem;
+        }
+
+        header {
+          padding: 12vh 0 5vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="container">
       <h1>baggZ</h1>
 
-      <div class="Socials-section">
-         <h2>Links</h2>
+      <p>He/Him</p>
 
-         <div id="Socials">
-            <a href="https://discordapp.com/users/960705314464874516" target="_blank">
-               <img src="Media/Socials/Discord.webp">
-            </a>
-
-            <a href="https://github.com/baggZ-idk" target="_blank">
-               <img src="Media/Socials/Untitled.png">
-            </a>
-
-            <a href="https://www.youtube.com/@baggZdev" target="_blank">
-               <img src="Media/Socials/Youtube.png">
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1J26ttcCLh6aaXYkiewwZWyQQfGSh2iV3?usp=drive_link" target="_blank">
-               <img src="Media/Socials/Bone.png">
-            </a>
-         </div>
+      <div class="links">
+        <a href="#models">Models</a>
+        <a href="#apps">Apps</a>
       </div>
+    </header>
 
-      <div class="section">
-         <h2>Models</h2>
+    <main class="container">
+      <section id="models">
+        <h2>Models</h2>
 
-         <img src="Media/Cosmetics & Props/SnowmanEx.png">
-         <img src="Media/Cosmetics & Props/RoseEx.png">
-         <br>
+        <div class="models">
+          <div class="model">
+            <img src="Media/Cosmetics & Props/SnowmanEx.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/RoseEx.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/CarrotEX.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/YeeHaw.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/AppleEx.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/Beanie.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/SawEx.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/Floatie.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/popsicle.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/image2.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/megaphone.png" />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/painter.png" />
+          </div>
+          <div class="model">
+            <img
+              src="Media/Cosmetics & Props/Screenshot 2025-07-20 180043.png"
+            />
+          </div>
+          <div class="model">
+            <img src="Media/Cosmetics & Props/image.png" />
+          </div>
+        </div>
+      </section>
 
-         <img src="Media/Cosmetics & Props/CarrotEX.png">
-         <img src="Media/Cosmetics & Props/YeeHaw.png">
-         <br>
+      <section id="projects">
+        <h2>Projects</h2>
 
-         <img src="Media/Cosmetics & Props/AppleEx.png">
-         <img src="Media/Cosmetics & Props/Beanie.png">
-         <br>
+        <div class="projects">
+          <a
+            class="project"
+            href="https://github.com/baggZ-idk/Fish-Shell-Android"
+            target="_blank"
+          >
+            <div class="project-title">
+              <span>Fish Shell Android</span>
+              <span class="project-arrow">↗</span>
+            </div>
 
-         <img src="Media/Cosmetics & Props/SawEx.png">
-         <img src="Media/Cosmetics & Props/Floatie.png">
-         <br>
+            <p>A port of the Fish shell built to run natively on Android.</p>
 
-         <img src="Media/Cosmetics & Props/popsicle.png">
-         <img src="Media/Cosmetics & Props/image2.png">
-         <br>
+            <div class="project-tags">
+              <span>C++</span>
+              <span>Android</span>
+              <span>Terminal</span>
+            </div>
+          </a>
 
-         <img src="Media/Cosmetics & Props/megaphone.png">
-         <img src="Media/Cosmetics & Props/painter.png">
-         <br>
+          <a
+            class="project"
+            href="https://github.com/baggZ-idk/Nano-Android"
+            target="_blank"
+          >
+            <div class="project-title">
+              <span>Nano Android</span>
+              <span class="project-arrow">↗</span>
+            </div>
 
-         <img src="Media/Cosmetics & Props/Screenshot 2025-07-20 180043.png">
-         <img src="Media/Cosmetics & Props/image.png">
-      </div>
+            <p>
+              A native Android build of GNU nano, built for use directly on
+              Android devices.
+            </p>
 
-      <div class="section">
-         <h2>Apps</h2>
-         <h3>uh i dont wanna list these rn check my github lol</h3>
-      </div>
-   </body>
+            <div class="project-tags">
+              <span>C</span>
+              <span>Android</span>
+              <span>Terminal</span>
+            </div>
+          </a>
+
+          <a
+            class="project"
+            href="https://github.com/baggZ-idk/GorillaGodot"
+            target="_blank"
+          >
+            <div class="project-title">
+              <span>GorillaGodot</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p>
+              A Godot VR template for building Gorilla-style games, featuring
+              custom locomotion, hand feedback, player rigging, and a starter
+              testing environment.
+            </p>
+
+            <div class="project-tags">
+              <span>Godot</span>
+              <span>GDScript</span>
+              <span>OpenXR</span>
+              <span>VR</span>
+            </div>
+          </a>
+
+          <a
+            class="project"
+            href="https://github.com/baggZ-idk/Multitool-Template"
+            target="_blank"
+          >
+            <div class="project-title">
+              <span>Multitool Template</span>
+              <span class="project-arrow">↗</span>
+            </div>
+
+            <p>A C# template for building console-based multitools.</p>
+
+            <div class="project-tags">
+              <span>C#</span>
+              <span>Terminal</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+
+        <div class="socials">
+          <a
+            href="https://discordapp.com/users/960705314464874516"
+            target="_blank"
+          >
+            <img src="Media/Socials/Discord.webp" />
+          </a>
+
+          <a href="https://github.com/baggZ-idk" target="_blank">
+            <img src="Media/Socials/Untitled.png" />
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 baggZ</footer>
+  </body>
 </html>
